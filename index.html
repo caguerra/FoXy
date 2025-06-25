@@ -1,0 +1,295 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="Fortran XML parser for poor people">
+    <meta name="author" content="Fortran-FOSS-Programmers Group" >
+    <link rel="icon" href="./favicon.png">
+
+    <title> FoXy </title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- Font Awesome -->
+    <link href="./css/fontawesome.min.css" rel="stylesheet">
+    <link href="./css/brands.min.css" rel="stylesheet">
+    <link href="./css/regular.min.css" rel="stylesheet">
+    <link href="./css/solid.min.css" rel="stylesheet">
+    <link href="./css/v4-font-face.min.css" rel="stylesheet">
+    <link href="./css/v4-shims.min.css" rel="stylesheet">
+    <!-- MathJax -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { equationNumbers: { autoNumber: "AMS" } }
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async
+            integrity="sha256-DViIOMYdwlM/axqoGDPeUyf0urLoHMN4QACBKyB58Uw=" crossorigin="anonymous"></script>
+    <!-- Other scripts and stylesheets -->
+    <link href="./css/local.css" rel="stylesheet">
+    <link href="./css/pygments.css" rel="stylesheet">
+    <script src="./js/svg-pan-zoom.min.js"></script>
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <div class="container-fluid mb-sm-4 mb-xl-2">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="./index.html">FoXy </a>
+          <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar"
+                  aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon">
+          </button>
+
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="./lists/files.html">Source Files</a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="./lists/modules.html">Modules</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="./lists/procedures.html">Procedures</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="./lists/types.html">Derived Types</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="./lists/programs.html">Programs</a>
+                </li>
+            </ul>
+              <div class="d-flex align-items-end flex-grow-1">
+                <form action="./search.html" role="search" class="ms-auto">
+                  <input type="text" class="form-control" aria-label="Search" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+                </form>
+              </div>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+    </div>
+
+    <div class="container">
+  <!-- Main component for a primary marketing message or call to action -->
+    <div class="p-5 mb-4 bg-light border rounded-3" id="jumbotron">
+      <p>Fortran XML parser for poor people</p>
+        <p> Find us on&hellip;</p>
+      <p>
+        <a class="btn btn-lg btn-primary" href="https://github.com/Fortran-FOSS-Programmers/FoXy" role="button">GitHub</a>
+        
+        
+        
+        
+      </p>
+    </div>
+
+      <div class="row" id='text'>
+        <div class=col-md-8>
+          <h1>FoXy</h1>
+          <p><a name="top"></a></p>
+<h1>FoXy</h1>
+<p><a href=""><img alt="License" src="https://img.shields.io/badge/license-GNU%20GeneraL%20Public%20License%20v3,%20GPLv3-blue.svg"></a>
+<a href=""><img alt="License" src="https://img.shields.io/badge/license-BSD2-red.svg"></a>
+<a href=""><img alt="License" src="https://img.shields.io/badge/license-BSD3-red.svg"></a>
+<a href=""><img alt="License" src="https://img.shields.io/badge/license-MIT-red.svg"></a></p>
+<p><a href=""><img alt="Status" src="https://img.shields.io/badge/status-stable-brightgreen.svg"></a>
+<a href="https://travis-ci.org/Fortran-FOSS-Programmers/FoXy"><img alt="Build Status" src="https://travis-ci.org/Fortran-FOSS-Programmers/FoXy.svg?branch=master"></a>
+<a href="http://codecov.io/github/Fortran-FOSS-Programmers/FoXy?branch=master"><img alt="Coverage Status" src="https://img.shields.io/codecov/c/github/Fortran-FOSS-Programmers/FoXy.svg"></a></p>
+<h3>FoXy, Fortran XML parser for poor people</h3>
+<p>A KISS pure Fortran Library for parsing XML files</p>
+<ul>
+<li>FoXy is a pure Fortran (KISS) library for modern Fortran projects;</li>
+<li>FoXy is Fortran 2008+ standard compliant;</li>
+<li>FoXy is OOP designed;</li>
+<li>FoXy is a Free, Open Source Project.</li>
+</ul>
+<h4>Compiler Support</h4>
+<p><a href=""><img alt="Compiler" src="https://img.shields.io/badge/GNU-v14.2.0+-brightgreen.svg"></a>
+<a href=""><img alt="Compiler" src="https://img.shields.io/badge/Intel-v16.x+-brightgreen.svg"></a>
+<a href=""><img alt="Compiler" src="https://img.shields.io/badge/IBM%20XL-not%20tested-yellow.svg"></a>
+<a href=""><img alt="Compiler" src="https://img.shields.io/badge/g95-not%20tested-yellow.svg"></a>
+<a href=""><img alt="Compiler" src="https://img.shields.io/badge/NAG-not%20tested-yellow.svg"></a>
+<a href=""><img alt="Compiler" src="https://img.shields.io/badge/PGI-not%20tested-yellow.svg"></a></p>
+<hr>
+<p><a href="#what-is-foxy">What is FoXy?</a> | <a href="#Aims">Aims</a> | <a href="#status">Status</a> | <a href="#documentation">Documentation</a> | <a href="#copyrights">Copyrights</a></p>
+<hr>
+<h2>What is FoXy?</h2>
+<p>Modern Fortran standards (2003+) have introduced better support for strings manipulations. Exploiting such new Fortran capabilities, FoXy is aimed to provide an easy to use module library to parse and emit <a href="https://en.wikipedia.org/wiki/XML">XML</a> files and or tags.</p>
+<h2>Aims</h2>
+<p>Other programming languages have many libraries for XML parsing, Fortran has less options, but some there are:</p>
+<ul>
+<li><a href="http://xml-fortran.sourceforge.net/">xml-fortran</a> of Arjen Markus;</li>
+<li><a href="https://github.com/rscircus/xmlf90">xml-f90</a> of Alberto Garcia;</li>
+<li><a href="https://github.com/andreww/fox">fox</a> of Andrew Walker that is an improved fork of <a href="https://github.com/rscircus/xmlf90">xml-f90</a> of Alberto Garcia;</li>
+<li><a href="https://github.com/DLR-SC/tixi">tixi</a> from DLR Simulation and Software Technology (C-binding).</li>
+</ul>
+<p>All of the above are great codes, but lack in some points that we would like to have:</p>
+<ul>
+<li>actively maintained;</li>
+<li>designed for modern Fortran:</li>
+<li>OOP designed;</li>
+<li>exploiting new features of Fortran (e.g. deferred length allocatable characters);</li>
+<li>recreate a pure Fortran representation of the XML data (e.g. tree structure exploiting);</li>
+<li>parallel architectures supported (threads/processes safety ensured);</li>
+<li>extensively tested (strong unit-test regression);</li>
+<li>comprehensively documented;</li>
+<li>pure Fortran:</li>
+<li>no wrapper;</li>
+<li>no bindings, no <code>ISO_C_BINDING</code>;</li>
+<li>be FOSS.</li>
+</ul>
+<p>In some sense or other, the afore-mentioned Fortran libraries miss somethings.</p>
+<p>Go to <a href="#top">Top</a></p>
+<h2>Status</h2>
+<p><a href=""><img alt="Status" src="https://img.shields.io/badge/status-stable-brightgreen.svg"></a>
+<a href="https://travis-ci.org/Fortran-FOSS-Programmers/FoXy"><img alt="Build Status" src="https://travis-ci.org/Fortran-FOSS-Programmers/FoXy.svg?branch=master"></a>
+<a href="http://codecov.io/github/Fortran-FOSS-Programmers/FoXy?branch=master"><img alt="Coverage Status" src="https://img.shields.io/codecov/c/github/Fortran-FOSS-Programmers/FoXy.svg"></a></p>
+<h3>Features</h3>
+<ul>
+<li>[ ] Input:</li>
+<li>[ ] parse input file/string:<ul>
+<li>[x] create linearized DOM (nested and repeated tags supported)</li>
+<li>[ ] lazy inquire tag into DOM;</li>
+</ul>
+</li>
+<li>[x] Output:<ul>
+<li>[x] write tag (<em>atomically</em>) on file/string;</li>
+</ul>
+</li>
+<li>[x] Input/Output:<ul>
+<li>[x] create tag structure:</li>
+<li>[x] start tag with name and attributes;</li>
+<li>[x] self closing tag;</li>
+<li>[x] nested tag;</li>
+<li>[x] tag content;</li>
+<li>[x] end tag;</li>
+<li>[x] tag DOM hierarchy (tag ID, parent ID, children IDs, level);</li>
+<li>[x] tag indent;</li>
+<li>[x] add tag to DOM;</li>
+<li>[x] delete tag from DOM;</li>
+</ul>
+</li>
+</ul>
+<h3>Doing</h3>
+<ul>
+<li>lazy inquire tag into DOM.</li>
+</ul>
+<h3>Todo</h3>
+<ul>
+<li>profile the parser:</li>
+<li>almost surely there are performance penalties;</li>
+</ul>
+<p>Go to <a href="#top">Top</a></p>
+<h2>Documentation</h2>
+<p>Besides this README file the FoXy documentation is contained into its own <a href="https://github.com/Fortran-FOSS-Programmers/FoXy/wiki">wiki</a>. Detailed documentation of the API is contained into the <a href="http://Fortran-FOSS-Programmers.github.io/FoXy/index.html">GitHub Pages</a> that can also be created locally by means of <a href="https://github.com/cmacmackin/ford">ford tool</a>.</p>
+<p>Go to <a href="#top">Top</a></p>
+<h2>Copyrights</h2>
+<p>FoXy is an open source project, it is distributed under a multi-licensing system:</p>
+<ul>
+<li>for FOSS projects:</li>
+<li><a href="http://www.gnu.org/licenses/gpl-3.0.html">GPL v3</a>;</li>
+<li>for closed source/commercial projects:</li>
+<li><a href="http://opensource.org/licenses/BSD-2-Clause">BSD 2-Clause</a>;</li>
+<li><a href="http://opensource.org/licenses/BSD-3-Clause">BSD 3-Clause</a>;</li>
+<li><a href="http://opensource.org/licenses/MIT">MIT</a>.</li>
+</ul>
+<p>Anyone is interest to use, to develop or to contribute to FoXy is welcome, feel free to select the license that best matches your soul!</p>
+<p>Go to <a href="#top">Top</a></p>
+        </div>
+          <div class="col-md-4">
+            <div class="card card-body bg-light">
+              <h2 class="card-title">Developer Info</h2>
+              <h4 class="card-text">Fortran-FOSS-Programmers Group</h4>
+              <p class="card-text"></p>
+                <div class="text-center"><div class="btn-group" role="group">
+                    <a class="btn btn-lg btn-primary" href="http://fortran-foss-programmers.github.io/"><i class="fa fa-globe fa-lg"></i></a>
+                    <a class="btn btn-lg btn-primary" href="http://fortran-foss-programmers.github.io/"><i class="fa fa-github fa-lg"></i></a>
+                    
+                    
+                    
+                    
+                    
+                    
+                </div></div>
+            </div>
+          </div>
+      </div>
+        <div class="row">
+          <hr>
+          <div class="col-xs-6 col-sm-3">
+            <div>
+              <h3>Source Files</h3>
+              <ul><li><a href='sourcefile/foxy.f90.html'>foxy.f90</a></li><li><a href='sourcefile/foxy_test_add_attributes.f90.html'>foxy_test_add_attributes.f90</a></li><li><a href='sourcefile/foxy_test_add_tag.f90.html'>foxy_test_add_tag.f90</a></li><li><a href='sourcefile/foxy_test_create_tag.f90.html'>foxy_test_create_tag.f90</a></li><li><a href='sourcefile/foxy_test_delete_attributes.f90.html'>foxy_test_delete_attributes.f90</a></li><li><a href='sourcefile/foxy_test_delete_content.f90.html'>foxy_test_delete_content.f90</a></li><li><a href='sourcefile/foxy_test_delete_tag.f90.html'>foxy_test_delete_tag.f90</a></li><li><a href='sourcefile/foxy_test_indent_tag.f90.html'>foxy_test_indent_tag.f90</a></li><li><a href='sourcefile/foxy_test_parse_file_simple.f90.html'>foxy_test_parse_file_simple.f90</a></li><li><a href='sourcefile/foxy_test_parse_string_nested_tags.f90.html'>foxy_test_parse_string_nested_tags.f90</a></li></ul>
+            </div>
+            <div>
+              <ul>
+                <li><a href="./lists/files.html"><em>All source files&hellip;</em></a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-xs-6 col-sm-3">
+            <div>
+              <h3>Modules</h3>
+              <ul><li><a href='module/foxy.html'>foxy</a></li><li><a href='module/foxy_xml_file.html'>foxy_xml_file</a></li><li><a href='module/foxy_xml_tag.html'>foxy_xml_tag</a></li></ul>
+            </div>
+            <div>
+              <ul>
+                <li><a href="./lists/modules.html"><em>All modules&hellip;</em></a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-xs-6 col-sm-3">
+            <div>
+              <h3>Procedures</h3>
+              <ul><li><a href='proc/add_child.html'>add_child</a></li><li><a href='proc/add_child_id.html'>add_child_id</a></li><li><a href='proc/add_multiple_attributes.html'>add_multiple_attributes</a></li><li><a href='proc/add_single_attribute.html'>add_single_attribute</a></li><li><a href='proc/add_stream_attributes.html'>add_stream_attributes</a></li><li><a href='proc/add_tag.html'>add_tag</a></li><li><a href='proc/alloc_attributes.html'>alloc_attributes</a></li><li><a href='proc/assign_tag.html'>assign_tag</a></li><li><a href='proc/attributes.html'>attributes</a></li><li><a href='proc/content.html'>content</a></li></ul>
+            </div>
+            <div>
+              <ul>
+                <li><a href="./lists/procedures.html"><em>All procedures&hellip;</em></a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-xs-6 col-sm-3">
+            <div>
+              <h3>Derived Types</h3>
+              <ul><li><a href='type/xml_file.html'>xml_file</a></li><li><a href='type/xml_tag.html'>xml_tag</a></li></ul>
+            </div>
+            <div>
+              <ul>
+                <li><a href="./lists/types.html"><em>All derived types&hellip;</em></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      <hr>
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col">
+            <p>
+              FoXy
+ was developed by Fortran-FOSS-Programmers Group<br>              &copy; 2025 
+</p>
+          </div>
+          <div class="col">
+            <p class="text-end">
+              Documentation generated by
+              <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+            </p>
+          </div>
+        </div>
+        <br>
+      </div> <!-- /container -->
+    </footer>
+  </body>
+</html>
